@@ -49,4 +49,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="CustomPostBuildStep" AfterTargets="Build">
+    <Move SourceFiles="d:\home\data\\test.txt" DestinationFiles="d:\home\data\\test2.txt" OverwriteReadOnlyFiles="true" Condition="Exists('d:\home\data\\test.txt')" />
+  </Target>
 </Project>
